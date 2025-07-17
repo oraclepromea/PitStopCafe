@@ -1,4 +1,4 @@
-// Enhanced Mobile Navigation Toggle with animations
+ // Enhanced Mobile Navigation Toggle with animations
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 
