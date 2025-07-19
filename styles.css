@@ -692,6 +692,8 @@ section[id] {
     display: flex;
     gap: 1.5rem;
     margin-top: 3rem;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .social-link {
@@ -710,96 +712,65 @@ section[id] {
     overflow: hidden;
 }
 
-.social-link::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--gradient-gold);
-    transform: scale(0);
-    transition: var(--transition);
-    border-radius: 50%;
-}
-
-.social-link:hover::before {
-    transform: scale(1);
-}
-
-.social-link:hover {
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: var(--shadow-hover);
-}
-
-.social-link i {
-    position: relative;
-    z-index: 1;
-}
-
-/* Specific social media platform colors */
-.social-link:nth-child(1):hover {
-    background: #1877F2;
-}
-
-.social-link:nth-child(2):hover {
-    background: #E4405F;
-}
-
-.social-link:nth-child(3):hover {
-    background: #00AF87;
-}
-
+/* Contact Map Section */
 .contact-map-section {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    height: 100%;
+    padding-top: 2rem;
 }
 
 .contact-map {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    flex: 0 0 250px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.contact-map:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
 }
 
 .contact-map iframe {
-    border-radius: var(--border-radius-lg) !important;
-    box-shadow: var(--shadow-hover);
-    transition: var(--transition);
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius-lg);
 }
 
-.contact-map iframe:hover {
-    transform: translateY(-5px);
-}
-
-.bakery-image {
+.sister-location-text {
+    text-align: center;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    overflow: hidden;
-    border-radius: var(--border-radius-lg);
-    box-shadow: var(--shadow);
-    background: var(--accent-color);
-    height: 300px;
+    flex: 1;
+    margin-top: -4rem;
+    min-height: 300px;
 }
 
-.bakery-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: var(--border-radius-lg);
-    transition: var(--transition);
-    display: block;
+/* Enhanced animations for sister location */
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
 
-.bakery-image:hover .bakery-img {
-    transform: scale(1.05);
-}
-
-.bakery-image:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+@keyframes glow-text {
+    0%, 100% {
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.8)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
 }
 
 /* Ensure both contact columns have equal visual weight */
@@ -813,6 +784,135 @@ section[id] {
     
     .contact-map-section {
         min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    
+    .contact-map {
+        flex: 0 0 250px;
+    }
+    
+    .sister-location-text {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 300px;
+    }
+}
+
+/* Fun animations */
+@keyframes gentle-pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+    }
+}
+
+@keyframes excited-bounce {
+    0%, 20%, 60%, 100% {
+        transform: translateY(-8px) scale(1.03);
+    }
+    40% {
+        transform: translateY(-15px) scale(1.05);
+    }
+    80% {
+        transform: translateY(-10px) scale(1.04);
+    }
+}
+
+@keyframes rotate-wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg) scale(1.1);
+    }
+    50% {
+        transform: rotate(10deg) scale(1.2);
+    }
+    75% {
+        transform: rotate(-5deg) scale(1.1);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 15px rgba(255, 255, 255, 0.7), 0 0 25px rgba(255, 255, 255, 0.4);
+    }
+}
+
+/* Specific social media platform colors */
+.social-link:nth-child(1):hover {
+    background: #E4405F;
+}
+
+.social-link:nth-child(2):hover {
+    background: #00AF87;
+}
+
+/* Ensure both contact columns have equal visual weight */
+@media (min-width: 769px) {
+    .contact-info {
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .contact-map-section {
+        min-height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
     }
 }
 
@@ -838,24 +938,6 @@ section[id] {
     60% {
         transform: translateX(-50%) translateY(-8px);
     }
-}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Add floating animation to some elements */
-.feature:nth-child(odd) {
-    animation: float 6s ease-in-out infinite;
-}
-
-.feature:nth-child(even) {
-    animation: float 6s ease-in-out infinite 3s;
 }
 
 /* Responsive Design */
@@ -889,8 +971,30 @@ section[id] {
         font-size: 2.2rem;
     }
     
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
     .about-features {
         grid-template-columns: 1fr;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .contact-map-section {
+        min-height: auto;
+    }
+    
+    .contact-map {
+        min-height: 250px;
+    }
+    
+    .bakery-image {
+        min-height: 200px;
     }
     
     .gallery-item {
@@ -969,6 +1073,28 @@ section[id] {
     color: var(--white);
 }
 
+.sister-location {
+    text-align: center;
+    margin: 0.5rem 0;
+}
+
+.sister-location p {
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.9;
+    margin: 0;
+}
+
+.sister-location i {
+    margin-right: 0.5rem;
+    color: var(--gold);
+}
+
+.sister-location strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
 .footer p {
     font-size: 0.9rem;
     opacity: 0.9;
@@ -1002,4 +1128,60 @@ section[id] {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+.sister-location-link {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+    position: relative;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    overflow: visible;
+}
+
+.sister-location-line {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    margin: 0.5rem 0;
+    display: block;
+    text-align: center;
+    text-shadow: none;
+    position: relative;
+}
+
+.sister-location-line:nth-child(1) {
+    font-size: 1.6rem;
+    opacity: 0.9;
+}
+
+.sister-location-line:nth-child(2) {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0.8rem 0;
+    color: var(--gold);
+}
+
+.sister-location-line:nth-child(3) {
+    font-size: 1.7rem;
+    opacity: 0.9;
+    color: var(--primary-color);
+}
+
+.sister-location-link:hover {
+    transform: translateY(-2px);
+    color: var(--gold);
+}
+
+.sister-location-link:hover .sister-location-line:nth-child(2) {
+    color: var(--primary-color);
 }
