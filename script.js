@@ -1,4 +1,4 @@
- // Enhanced Mobile Navigation Toggle with animations
+// Enhanced Mobile Navigation Toggle with animations
 const navToggle = document.getElementById('nav-toggle');
 const navMenu = document.getElementById('nav-menu');
 
@@ -350,7 +350,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'assets/gallery-6.jpg',
         'assets/about-image.jpg',
         'assets/coffee-bg.jpg',
-        'assets/logo.jpg'
+        'assets/logo.jpg',
+        'assets/Bakery Goods.jpg'
     ];
     
     galleryImages.forEach(src => {
