@@ -1073,6 +1073,42 @@ section[id] {
     color: var(--white);
 }
 
+.nomadic-credit {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin: 0;
+    font-style: italic;
+}
+
+.nomadic-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nomadic-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: var(--transition);
+}
+
+.nomadic-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+.nomadic-link:hover::after {
+    width: 100%;
+    background: var(--accent-color);
+}
+
 .sister-location {
     text-align: center;
     margin: 0.5rem 0;
